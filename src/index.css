@@ -21,8 +21,12 @@
     filter: invert(1) brightness(2);
   }
 
-@theme{
-  --text:var(--text)
+@theme {
+  --color-text:var(--text);
+  --color-bg:var(--bg);
+  --color-input:var(--input);
+  --color-elements:var(--elements);
+  --text-md:16px;
 }
 
 

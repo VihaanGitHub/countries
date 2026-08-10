@@ -1,12 +1,13 @@
-import React from 'react'
-import useTheme from './hooks/useTheme'
+import Header from './components/Header'
+import { useCountries } from './hooks/useCountries'
 
 export default function App() {
-    const {theme,toggleTheme} = useTheme();
+const [countries] = useCountries();
+console.log(countries);
+
   return (
-    <div className='text-text'>
-        <p>App</p>
-        <button onClick={toggleTheme}>Toggle theme</button>
+    <div>
+        <Header/>
     </div>
   )
 }

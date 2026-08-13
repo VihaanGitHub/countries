@@ -8,5 +8,6 @@ export interface Country{
         png:string
     },
     cioc:string,
+    capital:string  
     
 }

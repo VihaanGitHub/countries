@@ -8,7 +8,12 @@ export default function Utton() {
          window.history.back()
        }
        }>
+
+        
             <IoMdArrowBack /> <span className='text-text'>Back </span>
         </div>
+
+
+
   )
 }

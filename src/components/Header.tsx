@@ -4,7 +4,7 @@ import useTheme from "../hooks/useTheme";
 
 
 export default function Header() {
-    const {theme,toggleTheme} =  useTheme();
+  const {theme,toggleTheme} =  useTheme();
   return (
     <div className='flex justify-between text-md px-10  py-5 shadow-sm bg-elements '>
         <p className="font-extrabold ">Where in the world?</p>

@@ -11,7 +11,7 @@ export default function App() {
 
   return (
     <div>
-       <div className='flex py-7  justify-between px-10'>
+       <div className='md:flex py-7  justify-between  md:px-10 px-5'>
            <SearchInput setCountry={setCountry}/>
           <RegionFilter setRegion={setRegion} region={region} regions={regions}/>
 
@@ -24,7 +24,12 @@ export default function App() {
         {
           return(
           // <Card key={country.name} countryname={country.name} flag={country.flags.png} population={country.population} />
-          <div>
+          <div
+          className='cursor-pointer'
+           onClick={()=>{
+            window.location.href = `/countries?name=${country?.name}`
+           }}
+           >
      <div className='shadow-md bg-elements h-[60vh] '>
       <div className="rounded bg-elements h-1/2  ">
         <img src={country.flags.png} alt="" className='w-full h-full' />

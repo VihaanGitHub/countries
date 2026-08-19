@@ -11,19 +11,25 @@ export const useCountries=()=>{
     const [regions,setRegions] = useState<string[]>([]);
     const[region,setRegion] = useState<string|"">("");
     const [country,setCountry] = useState<string|"">("");
-
+    const [loader, Setloader] = useState<boolean>(true);
 
     const debouncedSearchTerm = useDebounce(country, 300); 
 
 
     useEffect(()=>{
        async function fetchCountries() {
+       Setloader(true);
+
             let regions = await getAllRegions();
             let temp =  await getAllCountries(region,debouncedSearchTerm);
             setCountries(temp)
          
             setRegions(regions);
+
+       Setloader(false)
+
        }
+
        fetchCountries();
     },[region,debouncedSearchTerm]);  
     
@@ -38,7 +44,7 @@ export const useCountries=()=>{
         country,
         setCountry:SetCountryHandler,
         region,setRegion,
-        regions
+        regions,loader
     }
 
 }

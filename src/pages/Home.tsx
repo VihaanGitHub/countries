@@ -6,7 +6,7 @@ import { useCountries } from '../hooks/useCountries'
 import type { Country } from '../types/country';
 
 export default function App() {
-  const { countries, setCountry,setRegion,regions,region} = useCountries() as { countries: Country[],setCountry: () => void ,setRegion: React.Dispatch<React.SetStateAction<string>>,regions:string[],region:string }; // tell TS the first item is Country[]
+  const { countries, setCountry,setRegion,regions,region,loader} = useCountries() as { countries: Country[],setCountry: () => void ,setRegion: React.Dispatch<React.SetStateAction<string>>,regions:string[],region:string ,loader:boolean}; // tell TS the first item is Country[]
     if (!Array.isArray(countries)) return <div>Loading...</div>; // guard before using map
 
   return (
@@ -45,7 +45,7 @@ export default function App() {
         )})}
      </CountriesGrid>
     ):
-    <div className='text-center font-bold text-2xl'>No Countries Found</div>
+    <div className='text-center font-bold text-2xl'>{loader ? "Loading..." : "No Countries Found"} </div>
     }
     </div>
   )

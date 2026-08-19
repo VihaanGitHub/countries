@@ -28,7 +28,7 @@ if(country){
             <h2 className='font-extrabold text-text md:mt-0 mt-5 text-3xl'>{country?.name}</h2>
             <p className='mt-5'><span className="font-bold text-text">Native Name: </span><span className='text-text'>{country?.nativeName}</span></p>
             {Object.entries(left).map(([key,label])=>{
-              return <HighLight key={key} label={label} value={country[key as keyof Country]}/>
+              return <HighLight key={key} label={label} value={country[key as keyof Country].toLocaleString()}/>
             })}
         </div>
         <div className="flex flex-col flex-[0.5] mt-17 gap-3">

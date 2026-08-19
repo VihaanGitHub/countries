@@ -1,6 +1,4 @@
-import React from 'react'
 import Button from '../components/Button';
-import { IoMdArrowBack } from 'react-icons/io';
 import useDetailsCountry from '../hooks/useDetailsCountry';
 import NotFound from './NotFound';
 import { left, right } from '../utils/HighlightFormatter';
@@ -8,8 +6,8 @@ import HighLight from '../components/HighLight';
 import type { Country } from '../types/country';
 
 export default function CountryDetails() {
-    const params = new URLSearchParams(window.location.search);
-    const value = params.get("name");
+    const params: URLSearchParams = new URLSearchParams(window.location.search);
+    let value = params.get("name") || "";
     const {country} = useDetailsCountry(value);
 
 

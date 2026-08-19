@@ -1,4 +1,3 @@
-import React from 'react'
 
 export default function Card({flag,countryname, population, region, capital}:{flag:string,countryname:string, population:number, region:string, capital:string }) {
   return (

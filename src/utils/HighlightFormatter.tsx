@@ -1,5 +1,4 @@
 import type { Country } from "../types/country";
-type CountryFormatter = (country: Country) => string | undefined;
 
 export const left: Record<keyof Pick<Country, "population" | "region" | "subregion" | "capital">, string> = {
   population: "Population",

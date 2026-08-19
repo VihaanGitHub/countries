@@ -1,4 +1,3 @@
-import Card from '../components/card';
 import CountriesGrid from '../components/CountriesGrid';
 import RegionFilter from '../components/RegionFilter';
 import SearchInput from '../components/SearchInput';
@@ -6,7 +5,7 @@ import { useCountries } from '../hooks/useCountries'
 import type { Country } from '../types/country';
 
 export default function App() {
-  const { countries, setCountry,setRegion,regions,region,loader} = useCountries() as { countries: Country[],setCountry: () => void ,setRegion: React.Dispatch<React.SetStateAction<string>>,regions:string[],region:string ,loader:boolean}; // tell TS the first item is Country[]
+  const { countries, setCountry,setRegion,regions,region,loader} = useCountries(); // tell TS the first item is Country[]
     if (!Array.isArray(countries)) return <div>Loading...</div>; // guard before using map
 
   return (

@@ -1,7 +1,6 @@
-import React from 'react'
 import { IoSearchSharp } from "react-icons/io5";
 
-export default function SearchInput({setCountry}: {setCountry: ()=> void}) {
+export default function SearchInput({setCountry}: {setCountry: React.ChangeEventHandler<HTMLInputElement>}) {
   return (
     <div className='relative w-full '>
       <IoSearchSharp size={20} className='absolute left-2 top-0 translate-y-1/2 '/>

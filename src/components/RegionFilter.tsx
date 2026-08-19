@@ -1,4 +1,3 @@
-import { useCountries } from '../hooks/useCountries'
 
 export default function RegionFilter({setRegion,region,regions}:{setRegion:React.Dispatch<React.SetStateAction<string>>,region:string,regions:string[]}) {
 
